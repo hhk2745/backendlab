@@ -1,13 +1,13 @@
+package thread;
+
 import java.util.Random;
 
-public class MyThread extends Thread{
+public class MyRunnable implements Runnable{
 
     private static final Random random = new Random();
 
     @Override
     public void run() {
-        // super.run();
-
         String threadName = Thread.currentThread().getName();
         System.out.println("- " + threadName + " has been started");
         int delay = 1000 + random.nextInt(4000);
@@ -17,6 +17,5 @@ public class MyThread extends Thread{
             e.printStackTrace();
         }
         System.out.println("- " + threadName + " has been ended (" + delay + "ms)");
-
     }
 }
